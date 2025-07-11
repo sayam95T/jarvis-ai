@@ -11,7 +11,11 @@ import json
 import vosk
 import queue
 import sounddevice as sd
-ACCESS_KEY='r9y1jmWBCeFEDy9S9JpQPTwzFDSCAAX5hCL6EToCpCU6zVJSDhBxhQ=='
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+ACCESS_KEY=os.getenv("PORCUPINE_KEY")
 # --- Offline TTS ---
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')

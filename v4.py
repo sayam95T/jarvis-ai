@@ -13,11 +13,14 @@ from tkinter import ttk
 import pyttsx3
 import os
 import time
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # --- CONFIGURATION ---
 WAKE_WORD = "jarvis"
-PORCUPINE_KEY = "r9y1jmWBCeFEDy9S9JpQPTwzFDSCAAX5hCL6EToCpCU6zVJSDhBxhQ=="
-HUGGINGFACE_API_KEY = "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"
+PORCUPINE_KEY = os.getenv("PORCUPINE_KEY")
+HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_TOKEN")
 HF_MODEL = "mistralai/Mistral-7B-Instruct-v0.1"
 
 # --- TEXT TO SPEECH SETUP ---

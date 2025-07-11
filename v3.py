@@ -14,11 +14,14 @@ from tkinter import ttk
 import pyttsx3
 import os
 import time
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # --- CONFIGURATION ---
 WAKE_WORD = "jarvis"
-PORCUPINE_KEY = "r9y1jmWBCeFEDy9S9JpQPTwzFDSCAAX5hCL6EToCpCU6zVJSDhBxhQ=="
-OPENAI_KEY = "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"
+PORCUPINE_KEY = os.getenv("PORCUPINE_KEY")
+OPENAI_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_KEY)
 
 # --- TEXT TO SPEECH SETUP ---

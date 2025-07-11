@@ -12,8 +12,12 @@ import vosk
 import queue
 import sounddevice as sd
 import openai
-ACCESS_KEY='r9y1jmWBCeFEDy9S9JpQPTwzFDSCAAX5hCL6EToCpCU6zVJSDhBxhQ=='
-openai.api_key='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'
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+ACCESS_KEY= os.getenv("PORCUPINE_KEY")
+openai.api_key= os.getenv("OPENAI_API_KEY")
 # --- Offline TTS ---
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')

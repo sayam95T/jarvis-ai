@@ -14,11 +14,15 @@ import os
 import time
 import speech_recognition as sr
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- CONFIGURATION ---
 WAKE_WORD = "jarvis"
-PORCUPINE_KEY = "r9y1jmWBCeFEDy9S9JpQPTwzFDSCAAX5hCL6EToCpCU6zVJSDhBxhQ=="
-GROQ_API_KEY = "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"
+PORCUPINE_KEY = os.getenv("PORCUPINE_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # --- TEXT TO SPEECH SETUP ---
 import pyttsx3
